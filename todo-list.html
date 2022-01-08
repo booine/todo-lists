@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>Todo lists Part 2</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1 @click="show()">todo lists:</h1>
+    </div>
+
+
+    <!-- 【 Vue.js 】CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <!-- 引入js方法一：用<script src="檔名.js">的方式引入外部js檔案。 -->
+    <script src="main.js"></script>
+    <!--  引入js方法二：直接將Vue.js instance寫入html -->
+    <!-- <script>
+        const one = Vue.createApp({
+            data() {
+                return {
+                    message: ''
+                }
+            },
+            methods: {
+                show() {
+                    alert('Hi!!')
+                }
+            }
+        }).mount('#app');
+    </script> -->
+</body>
+
+</html>
