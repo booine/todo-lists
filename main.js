@@ -30,6 +30,15 @@ const one = Vue.createApp({
             this.todos.push(newTodo); // 向陣列 todos 後方新增新的 object。
 
             this.addMessage = ''; //清空輸入格
+        },
+        deleteTodo(todo, index) {
+            // 製作確認是否刪除的對話視窗： confirm(message);
+            // confirm(message);會跳出帶有「取消」與「確認」鍵的對話視窗，執行完會回傳布林值，按取消就回傳(false)、按確認就回傳(true)
+            // let result = confirm('Delete todo : ' + todo.content + ' ?'); //舊寫法
+            let result = confirm(`Delete todo : ${todo.content} ?`); //新寫法，利用 ${變數或參數或引數}帶入變數、參數或引數內容。
+            if (result) {
+                this.todos.splice(index, 1);
+            }
         }
     }
 

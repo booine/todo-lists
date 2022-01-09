@@ -32,7 +32,7 @@
 
         <ul id="todo-list">
             <li
-                v-for="todo in todos"
+                v-for="(todo,index) in todos"
                 :data-id="todo.id"
                 :class="{ 'complete': todo.complete }"
             >
@@ -41,7 +41,8 @@
                     v-model="todo.complete"
                 >
                 <div class="content"> {{todo.content}} </div>
-                <button>x</button>
+                <button @click="deleteTodo(todo,index)">x</button>
+                <!-- index代表 todos 陣列中每一筆資料(todo)的索引值 。-->
             </li>
 
         </ul>
