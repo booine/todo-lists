@@ -14,10 +14,18 @@
         display: flex;
         border-bottom: 1px solid #ccc;
         padding: 10px 10px;
+
+        &.complete {
+            .content {
+                text-decoration: line-through;
+            }
+        }
     }
+
 
     .content {
         flex: 1;
         padding: 0 10px;
+
     }
 }

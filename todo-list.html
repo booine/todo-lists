@@ -30,21 +30,19 @@
         </div>
 
         <ul id="todo-list">
-            <li>
-                <input type="checkbox">
-                <div class="content">選項1</div>
+            <li
+                v-for="todo in todos"
+                :data-id="todo.id"
+                :class="{ 'complete': todo.complete }"
+            >
+                <input
+                    type="checkbox"
+                    v-model="todo.complete"
+                >
+                <div class="content"> {{todo.content}} </div>
                 <button>x</button>
             </li>
-            <li>
-                <input type="checkbox">
-                <div class="content">選項1</div>
-                <button>x</button>
-            </li>
-            <li>
-                <input type="checkbox">
-                <div class="content">選項1</div>
-                <button>x</button>
-            </li>
+
         </ul>
     </div>
 
