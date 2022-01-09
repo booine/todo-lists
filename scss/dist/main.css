@@ -1,0 +1,20 @@
+.center {
+  text-align: center;
+}
+.center h1 {
+  text-transform: capitalize;
+}
+
+#todo-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+#todo-list li {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 10px;
+}
+#todo-list .content {
+  flex: 1;
+  padding: 0 10px;
+}

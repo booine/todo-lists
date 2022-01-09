@@ -12,12 +12,40 @@
         content="width=device-width, initial-scale=1.0"
     >
     <title>Todo lists Part 2</title>
+    <link
+        rel="stylesheet"
+        href="scss/dist/main.css"
+    >
 </head>
 
 <body>
 
     <div id="app">
-        <h1 @click="show()">todo lists:</h1>
+        <div class="center">
+            <h1>todo lists:</h1>
+            <input
+                type="text"
+                v-model="addMessage"
+            >
+        </div>
+
+        <ul id="todo-list">
+            <li>
+                <input type="checkbox">
+                <div class="content">選項1</div>
+                <button>x</button>
+            </li>
+            <li>
+                <input type="checkbox">
+                <div class="content">選項1</div>
+                <button>x</button>
+            </li>
+            <li>
+                <input type="checkbox">
+                <div class="content">選項1</div>
+                <button>x</button>
+            </li>
+        </ul>
     </div>
 
 

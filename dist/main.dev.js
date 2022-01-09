@@ -3,12 +3,7 @@
 var one = Vue.createApp({
   data: function data() {
     return {
-      message: ''
+      addMessage: ''
     };
-  },
-  methods: {
-    show: function show() {
-      alert('Hi!!');
-    }
   }
 }).mount('#app');

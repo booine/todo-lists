@@ -1,12 +1,8 @@
 const one = Vue.createApp({
     data() {
         return {
-            message: ''
+            addMessage: ''
         };
     },
-    methods: {
-        show() {
-            alert('Hi!!')
-        }
-    },
+
 }).mount('#app');
