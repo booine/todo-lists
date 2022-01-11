@@ -40,7 +40,20 @@
                     type="checkbox"
                     v-model="todo.complete"
                 >
-                <div class="content"> {{todo.content}} </div>
+
+                <div
+                    class="content"
+                    @dblclick="enterEditMode(todo)"
+                    v-show="editModeId !== todo.id"
+                > {{todo.content}} </div>
+                <input
+                    type="text"
+                    v-model="todo.content"
+                    v-show="editModeId === todo.id"
+                    @keyup.enter="updateTodo"
+                    @keyup.esc="cancelUpdateTodo(todo)"
+                >
+
                 <button @click="deleteTodo(todo,index)">x</button>
                 <!-- index代表 todos 陣列中每一筆資料(todo)的索引值 。-->
             </li>

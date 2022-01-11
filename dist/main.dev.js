@@ -16,7 +16,9 @@ var one = Vue.createApp({
         id: 3,
         content: '選項3',
         complete: false
-      }]
+      }],
+      editModeId: null,
+      beforeContent: ''
     };
   },
   methods: {
@@ -24,7 +26,7 @@ var one = Vue.createApp({
       // 因使用者輸入而觸發。
       var newTodo = {
         //建立新的 object，將使用者的輸入值寫入todos array中。
-        id: this.todos.lenght + 1,
+        id: this.todos.length + 1,
         // id這裡通常會跟後端用 API 做連接。這裡先用其他方法代替。
         content: this.addMessage,
         complete: false
@@ -42,6 +44,25 @@ var one = Vue.createApp({
       if (result) {
         this.todos.splice(index, 1);
       }
+    },
+    enterEditMode: function enterEditMode(todo) {
+      // 雙點擊後進入【編輯模式】：
+      this.editModeId = todo.id; // 要作為 v-show 的判斷依據。
+
+      this.beforeContent = todo.content; // 將原本的輸入先暫存在 beforeContent 中，以便取消編輯後重新寫回。
+    },
+    updateTodo: function updateTodo() {
+      // (完成編輯)當按下 enter 後執行：
+      this.leaveEditMode();
+    },
+    cancelUpdateTodo: function cancelUpdateTodo(todo) {
+      // (取消編輯)當按下 esc 後執行並回復到原先的內容：
+      this.leaveEditMode();
+      todo.content = this.beforeContent; // 將原先的內容重新寫回(所以才要傳入todo參數)。
+    },
+    leaveEditMode: function leaveEditMode() {
+      // 離開【編輯模式】：
+      this.editModeId = null;
     }
   }
 }).mount('#app');

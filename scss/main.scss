@@ -27,5 +27,11 @@
         flex: 1;
         padding: 0 10px;
 
+        &~input {
+            // 「 & ~ input 」意思是在class為 .content 之下的 input。
+            margin: 0 10px;
+            flex: 1;
+        }
+
     }
 }

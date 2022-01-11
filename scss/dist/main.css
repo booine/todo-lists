@@ -21,3 +21,7 @@
   flex: 1;
   padding: 0 10px;
 }
+#todo-list .content ~ input {
+  margin: 0 10px;
+  flex: 1;
+}
