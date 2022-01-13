@@ -43,7 +43,7 @@
 
                 <div
                     class="content"
-                    @dblclick="enterEditMode(todo)"
+                    @dblclick="enterEditMode(todo,$event)"
                     v-show="editModeId !== todo.id"
                 > {{todo.content}} </div>
                 <input
