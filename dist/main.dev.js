@@ -43,6 +43,7 @@ var one = Vue.createApp({
 
       if (result) {
         this.todos.splice(index, 1);
+        console.log(index); // delete this.todos[index + 1];
       }
     },
     // 雙點擊後進入【編輯模式】& Auto focus：

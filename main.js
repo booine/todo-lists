@@ -41,6 +41,8 @@ const one = Vue.createApp({
             let result = confirm(`Delete todo : ${todo.content} ?`); //新寫法，利用 ${變數或參數或引數}帶入變數、參數或引數內容。
             if (result) {
                 this.todos.splice(index, 1);
+                console.log(index);
+                // delete this.todos[index + 1];
             }
         },
         // 雙點擊後進入【編輯模式】& Auto focus：
